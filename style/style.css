@@ -9,7 +9,8 @@ header {
   display: flex;
   justify-content: center;
   border-bottom: 1px transparent black;
-  box-shadow: 0 0 16px #0000002e;
+  -webkit-box-shadow: inset -16px -31px 15px -30px rgba(0, 0, 0, 0.35);
+  box-shadow: inset -16px -31px 15px -30px rgba(0, 0, 0, 0.35);
 }
 
 header img {
@@ -60,7 +61,7 @@ header img {
 #ButtonDescription {
   margin-top: 2rem;
   display: inline-block;
-  border: 1px solid #FF79DA;
+  border: 1px transparent #FF79DA;
   background-color: #9356DC;
   background-image: linear-gradient(to right, #FF79DA, #9356DC);
   border-radius: 25px;
@@ -69,6 +70,59 @@ header img {
   text-decoration: none;
   font-weight: 600;
   box-shadow: 0 0 16px #0000002e;
+}
+
+#Fonctionnement {
+  margin: 2rem 1rem 2rem 1rem;
+}
+
+#Fonctionnement ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+#Fonctionnement i {
+  font-size: 20px;
+}
+
+#Fonctionnement span {
+  border: 1px solid white;
+  border-radius: 40px;
+  background: #f6f6f6;
+  padding: 1rem 2rem 1rem 2rem;
+  box-shadow: 0 0 16px #0000002e;
+}
+#Fonctionnement span:hover {
+  background-color: #f5edff;
+}
+#Fonctionnement span:hover .fas {
+  color: #9356DC;
+  opacity: 1;
+}
+
+#Fonctionnement li {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+#Fonctionnement i {
+  opacity: 0.5;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+#Fonctionnement p {
+  position: absolute;
+  left: 30px;
+  border: 1px solid #9356DC;
+  padding: 5px 10px 5px 10px;
+  border-radius: 50%;
+  color: white;
+  background-color: #9356DC;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,7 +2,8 @@
 $primary_color: #9356DC;
 $secondary_color: #FF79DA;
 $third_color: #99E2D0;
-$font-family: 'Roboto', sans-serif;
+$font-family: 'Roboto',
+sans-serif;
 
 * {
     margin: 0;
@@ -14,7 +15,8 @@ header {
     display: flex;
     justify-content: center;
     border-bottom: 1px transparent black;
-    box-shadow: 0 0 16px #0000002e;
+    -webkit-box-shadow: inset -16px -31px 15px -30px rgba(0,0,0,0.35); 
+    box-shadow: inset -16px -31px 15px -30px rgba(0,0,0,0.35);
 }
 
 header img {
@@ -24,7 +26,7 @@ header img {
 #subheader {
     display: flex;
     justify-content: center;
-    background-color: rgba(234,234,234,255);
+    background-color: rgba(234, 234, 234, 255);
     padding: 20px 0px 20px 0px;
 }
 
@@ -39,7 +41,7 @@ header img {
 }
 
 #Description {
-    background-color: rgba(246,246,246,255);
+    background-color: rgba(246, 246, 246, 255);
     display: flex;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -61,12 +63,13 @@ header img {
     width: 80%;
     font-weight: 400;
 }
+
 #ButtonDescription {
     margin-top: 2rem;
     display: inline-block;
-    border: 1px solid $secondary_color;
+    border: 1px transparent $secondary_color;
     background-color: $primary_color;
-    background-image: 
+    background-image:
         linear-gradient(to right, $secondary_color, $primary_color);
     border-radius: 25px;
     color: white;
@@ -74,4 +77,57 @@ header img {
     text-decoration: none;
     font-weight: 600;
     box-shadow: 0 0 16px #0000002e;
+}
+
+#Fonctionnement {
+    margin: 2rem 1rem 2rem 1rem;
+}
+
+#Fonctionnement ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    font-family: $font-family;
+    font-size: 16px;
+}
+
+#Fonctionnement i {
+    font-size: 20px;
+}
+
+#Fonctionnement span {
+    border: 1px solid white;
+    border-radius: 40px;
+    background: rgba(246, 246, 246, 255);
+    padding: 1rem 2rem 1rem 2rem;
+    box-shadow: 0 0 16px #0000002e;
+
+    &:hover {
+        background-color: rgba(245,237,255,255);
+        .fas {
+            color: $primary_color;
+            opacity: 1;
+        }
+    }
+}
+
+#Fonctionnement li {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+#Fonctionnement i {
+    opacity: 0.5;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+#Fonctionnement p {
+    position: absolute;
+    left: 30px;
+    border: 1px solid $primary_color;
+    padding: 5px 10px 5px 10px;
+    border-radius: 50%;
+    color: white;
+    background-color: $primary_color;
 }
