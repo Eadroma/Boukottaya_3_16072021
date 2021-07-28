@@ -80,7 +80,11 @@ header img {
 }
 
 #Fonctionnement {
-    margin: 2rem 1rem 2rem 1rem;
+    margin: 2rem 1rem 4rem 1rem;
+}
+
+#Fonctionnement h1 {
+    font-family: $font-family;
 }
 
 #Fonctionnement ul {
@@ -130,4 +134,80 @@ header img {
     border-radius: 50%;
     color: white;
     background-color: $primary_color;
+}
+
+#Restaurant {
+    background-color: rgba(246, 246, 246, 255);
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#Restaurant h1 {
+    font-family: $font-family;
+    margin: 0 0 1rem 1rem;
+}
+
+#Restaurant_cards img {
+    object-fit: fill;
+    width: 100%;
+    border-radius: 25px 25px 0 0;
+}
+
+#Restaurant_cards figure {
+    background-color: white;
+    width: 90%;
+    box-shadow: 0 0 16px #0000002e;
+    border-radius: 25px 25px 25px 25px;
+    margin-left: 5%;
+}
+
+.card_text {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 10px 5px 10px;
+    font: $font-family;
+
+}
+
+.card_text h2 {
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.card_text p {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+#Restaurant_cards figcaption {
+    display: inline-flex;
+    align-items: center;
+}
+
+.card_logo {
+    display: relative;
+}
+
+.card_logo i {
+    padding-left: 5rem;
+    font-size: 28px;
+}
+
+.icon-unlock {
+    opacity: 0.5
+}
+
+.lock:hover .icon-unlock,
+.lock .icon-lock {
+    display: none;
+}
+.lock:hover .icon-lock {
+    display: inline;
+    color: $primary_color;
+}
+
+.Restaurant_card {
+    margin-bottom: 2rem;
 }
