@@ -2,8 +2,8 @@
 $primary_color: #9356DC;
 $secondary_color: #FF79DA;
 $third_color: #99E2D0;
-$font-family: 'Roboto',
-sans-serif;
+$font-family: 'Roboto', sans-serif;
+$logo-font: 'Shrikhand', cursive;
 
 * {
     margin: 0;
@@ -54,6 +54,7 @@ header img {
     font-size: 24px;
     width: 70%;
     font-weight: 800;
+    text-align: center;
 }
 
 #Description p {
@@ -61,6 +62,7 @@ header img {
     margin-top: 1rem;
     font-size: 16px;
     width: 80%;
+    text-align: center;
     font-weight: 400;
 }
 
@@ -105,7 +107,7 @@ header img {
     background: rgba(246, 246, 246, 255);
     padding: 1rem 2rem 1rem 2rem;
     box-shadow: 0 0 16px #0000002e;
-
+    min-width: 72%;
     &:hover {
         background-color: rgba(245,237,255,255);
         .fas {
@@ -128,7 +130,7 @@ header img {
 
 #Fonctionnement p {
     position: absolute;
-    left: 30px;
+    left: 42px;
     border: 1px solid $primary_color;
     padding: 5px 10px 5px 10px;
     border-radius: 50%;
@@ -149,8 +151,9 @@ header img {
 }
 
 #Restaurant_cards img {
-    object-fit: fill;
+    object-fit: cover;
     width: 100%;
+    max-height: 227px;
     border-radius: 25px 25px 0 0;
 }
 
@@ -184,6 +187,10 @@ header img {
 #Restaurant_cards figcaption {
     display: inline-flex;
     align-items: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .card_logo {
@@ -191,7 +198,7 @@ header img {
 }
 
 .card_logo i {
-    padding-left: 5rem;
+    margin-right: 1rem;
     font-size: 28px;
 }
 
@@ -210,4 +217,36 @@ header img {
 
 .Restaurant_card {
     margin-bottom: 2rem;
+}
+
+footer {
+    background-color: rgba(53,53,53,255);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+footer h2 {
+    font-family: $logo-font;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin: 2rem 0 1rem 1rem;
+}
+
+footer ul {
+    font-family: $font-family;
+    list-style: none;
+    padding: 0;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    font-style: normal;
+}
+
+footer i {
+    margin-right: 0.5rem;
+    font-size: 16px;
+}
+
+footer li {
+    margin-bottom: 0.5rem;
 }
