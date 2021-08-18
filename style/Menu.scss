@@ -1,12 +1,15 @@
 $primary_color: #9356DC;
 $secondary_color: #FF79DA;
 $third_color: #99E2D0;
-$font-family: 'Roboto', sans-serif;
-$logo-font: 'Shrikhand', cursive;
+$font-family: 'Roboto',
+sans-serif;
+$logo-font: 'Shrikhand',
+cursive;
 
 * {
     margin: 0;
 }
+
 header {
     width: 100%;
     padding-bottom: 10px;
@@ -39,6 +42,10 @@ img {
 }
 
 #main_content {
+    position: relative;
+    top: -38px;
+    border-top-left-radius: 42px;
+    border-top-right-radius: 42px;
     background-color: rgba(246, 246, 246, 255);
     display: flex;
     flex-direction: column;
@@ -47,6 +54,7 @@ img {
 }
 
 #main_content h1 {
+    margin-top: 2rem;
     letter-spacing: 2px;
     font-size: 24px;
 }
@@ -56,6 +64,7 @@ img {
 }
 
 .card_logo i {
+    margin-top: 2.3rem;
     margin-right: 1rem;
     font-size: 28px;
 }
@@ -68,6 +77,7 @@ img {
 .lock .icon-lock {
     display: none;
 }
+
 .lock:hover .icon-lock {
     display: inline;
     color: $primary_color;
@@ -78,7 +88,7 @@ img {
     justify-content: space-around;
 }
 
-.title_menu h2{
+.title_menu h2 {
     text-transform: uppercase;
     font-family: $font-family;
     font-weight: 300;
@@ -89,22 +99,40 @@ img {
     width: 10%;
 }
 
-#plat_content, #dessert_content, #entree_content {
+#plat_content,
+#dessert_content,
+#entree_content {
     margin: 1.5rem 1rem 0rem 1rem;
 }
 
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 0 16px #0000002e;
+    border-radius: 15px;
+    padding: 0px 0px 0px 10px;
+    width: 90%;
+    margin: 10px 0px 10px 0px;
+    overflow: hidden;
+
+    &:hover>.card_anim,
+    &:active>.card_anim {
+        margin-right: 0rem;
+    }
+    &:active> .card_anim i, &:hover> .card_anim i {
+        transform: rotate(0);
+    }
+}
 
 .card_menu {
     display: flex;
     flex-direction: column;
-    margin-right: 2rem;
     margin-top: 1rem;
-    background-color: white;
-    box-shadow: 0 0 16px #0000002e;
-    border-radius: 15px;
-    padding: 10px 20px 10px 10px;
-    width: 90%;
     margin-bottom: 1rem;
+    width: inherit;
 }
 
 .card_menu_description p {
@@ -143,10 +171,11 @@ img {
     font-weight: 600;
     box-shadow: 0 0 16px #0000002e;
     align-self: center;
+    text-align: center;
 }
 
 footer {
-    background-color: rgba(53,53,53,255);
+    background-color: rgba(53, 53, 53, 255);
     color: white;
     display: flex;
     flex-direction: column;
@@ -175,4 +204,32 @@ footer i {
 
 footer li {
     margin-bottom: 0.5rem;
+}
+
+.checkanim {
+    background: lightgreen;
+    height: 100%;
+}
+
+.card_anim {
+    display: flex;
+    background-color: #99e2d0;
+    min-height: 78px;
+    align-items: center;
+    border-radius: 0px 15px 15px 0px;
+    width: 4rem;
+    justify-content: center;
+    color: white;
+    margin: -1rem -8rem -1rem 1rem;
+    transition-duration: .5s;
+
+    &:hover,
+    &:active {
+        margin-right: 0rem;
+    }
+
+    i {
+        transform: rotate(180deg);
+        transition-duration: 1s;
+    }
 }
