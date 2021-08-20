@@ -50,6 +50,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    margin-bottom: -38px;
     padding-bottom: 3rem;
 }
 
@@ -105,6 +106,13 @@ img {
     margin: 1.5rem 1rem 0rem 1rem;
 }
 
+@mixin animation {
+    @for $i from 1 through 16 {
+        &:nth-child(#{$i}) {
+            animation: card_pop #{$i}s ease-in-out;
+        }
+    }
+}
 .card {
     display: flex;
     flex-direction: row;
@@ -115,17 +123,28 @@ img {
     border-radius: 15px;
     padding: 0px 0px 0px 10px;
     width: 90%;
-    margin: 10px 0px 10px 0px;
+    margin: 20px auto 10px auto;
     overflow: hidden;
+
+
+    &:hover>.card_menu,
+    &:active>.card_menu {
+        max-width: 70%;
+    }
 
     &:hover>.card_anim,
     &:active>.card_anim {
         margin-right: 0rem;
     }
-    &:active> .card_anim i, &:hover> .card_anim i {
+
+    &:active>.card_anim i,
+    &:hover>.card_anim i {
         transform: rotate(0);
     }
+    @include animation;
+
 }
+
 
 .card_menu {
     display: flex;
@@ -133,6 +152,9 @@ img {
     margin-top: 1rem;
     margin-bottom: 1rem;
     width: inherit;
+    transition: max-width 1s linear 2.5s;
+    -webkit-transition: max-width 1s linear .5s;
+
 }
 
 .card_menu_description p {
@@ -149,6 +171,9 @@ img {
 }
 
 .card_menu h3 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     margin-bottom: 5px;
 }
 
@@ -231,5 +256,17 @@ footer li {
     i {
         transform: rotate(180deg);
         transition-duration: 1s;
+    }
+}
+
+@keyframes card_pop {
+    0%{
+        opacity: 0;
+    }
+    1%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

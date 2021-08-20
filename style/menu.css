@@ -42,6 +42,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  margin-bottom: -38px;
   padding-bottom: 3rem;
 }
 
@@ -107,14 +108,65 @@ img {
   border-radius: 15px;
   padding: 0px 0px 0px 10px;
   width: 90%;
-  margin: 10px 0px 10px 0px;
+  margin: 20px auto 10px auto;
   overflow: hidden;
+}
+.card:hover > .card_menu, .card:active > .card_menu {
+  max-width: 70%;
 }
 .card:hover > .card_anim, .card:active > .card_anim {
   margin-right: 0rem;
 }
 .card:active > .card_anim i, .card:hover > .card_anim i {
   transform: rotate(0);
+}
+.card:nth-child(1) {
+  animation: card_pop 1s ease-in-out;
+}
+.card:nth-child(2) {
+  animation: card_pop 2s ease-in-out;
+}
+.card:nth-child(3) {
+  animation: card_pop 3s ease-in-out;
+}
+.card:nth-child(4) {
+  animation: card_pop 4s ease-in-out;
+}
+.card:nth-child(5) {
+  animation: card_pop 5s ease-in-out;
+}
+.card:nth-child(6) {
+  animation: card_pop 6s ease-in-out;
+}
+.card:nth-child(7) {
+  animation: card_pop 7s ease-in-out;
+}
+.card:nth-child(8) {
+  animation: card_pop 8s ease-in-out;
+}
+.card:nth-child(9) {
+  animation: card_pop 9s ease-in-out;
+}
+.card:nth-child(10) {
+  animation: card_pop 10s ease-in-out;
+}
+.card:nth-child(11) {
+  animation: card_pop 11s ease-in-out;
+}
+.card:nth-child(12) {
+  animation: card_pop 12s ease-in-out;
+}
+.card:nth-child(13) {
+  animation: card_pop 13s ease-in-out;
+}
+.card:nth-child(14) {
+  animation: card_pop 14s ease-in-out;
+}
+.card:nth-child(15) {
+  animation: card_pop 15s ease-in-out;
+}
+.card:nth-child(16) {
+  animation: card_pop 16s ease-in-out;
 }
 
 .card_menu {
@@ -123,6 +175,8 @@ img {
   margin-top: 1rem;
   margin-bottom: 1rem;
   width: inherit;
+  transition: max-width 1s linear 2.5s;
+  -webkit-transition: max-width 1s linear 0.5s;
 }
 
 .card_menu_description p {
@@ -139,6 +193,9 @@ img {
 }
 
 .card_menu h3 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   margin-bottom: 5px;
 }
 
@@ -218,6 +275,18 @@ footer li {
 .card_anim i {
   transform: rotate(180deg);
   transition-duration: 1s;
+}
+
+@keyframes card_pop {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=menu.css.map */
