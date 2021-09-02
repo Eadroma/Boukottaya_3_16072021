@@ -242,6 +242,10 @@ footer {
   display: flex;
   flex-direction: column;
 }
+footer a {
+  color: white;
+  text-decoration: none;
+}
 
 footer h2 {
   font-family: "Shrikhand", cursive;
