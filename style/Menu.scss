@@ -5,7 +5,7 @@ $font-family: 'Roboto',
 sans-serif;
 $logo-font: 'Shrikhand',
 cursive;
-
+$variable: 0;
 * {
     margin: 0;
 }
@@ -78,7 +78,6 @@ img {
 .lock .icon-lock {
     display: none;
 }
-
 .lock:hover .icon-lock {
     display: inline;
     color: $primary_color;
@@ -106,13 +105,14 @@ img {
     margin: 1.5rem 1rem 0rem 1rem;
 }
 
-@mixin animation {
     @for $i from 1 through 16 {
-        &:nth-child(#{$i}) {
+        .card-#{$i} {
             animation: card_pop #{$i}s ease-in-out;
         }
     }
-}
+
+
+
 .card {
     display: flex;
     flex-direction: row;
@@ -141,7 +141,6 @@ img {
     &:hover>.card_anim i {
         transform: rotate(0);
     }
-    @include animation;
 
 }
 
@@ -154,7 +153,6 @@ img {
     width: inherit;
     transition: max-width 1s linear 2.5s;
     -webkit-transition: max-width 1s linear .5s;
-
 }
 
 .card_menu_description p {

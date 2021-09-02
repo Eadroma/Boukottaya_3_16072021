@@ -98,6 +98,70 @@ img {
   margin: 1.5rem 1rem 0rem 1rem;
 }
 
+.card-1 {
+  animation: card_pop 1s ease-in-out;
+}
+
+.card-2 {
+  animation: card_pop 2s ease-in-out;
+}
+
+.card-3 {
+  animation: card_pop 3s ease-in-out;
+}
+
+.card-4 {
+  animation: card_pop 4s ease-in-out;
+}
+
+.card-5 {
+  animation: card_pop 5s ease-in-out;
+}
+
+.card-6 {
+  animation: card_pop 6s ease-in-out;
+}
+
+.card-7 {
+  animation: card_pop 7s ease-in-out;
+}
+
+.card-8 {
+  animation: card_pop 8s ease-in-out;
+}
+
+.card-9 {
+  animation: card_pop 9s ease-in-out;
+}
+
+.card-10 {
+  animation: card_pop 10s ease-in-out;
+}
+
+.card-11 {
+  animation: card_pop 11s ease-in-out;
+}
+
+.card-12 {
+  animation: card_pop 12s ease-in-out;
+}
+
+.card-13 {
+  animation: card_pop 13s ease-in-out;
+}
+
+.card-14 {
+  animation: card_pop 14s ease-in-out;
+}
+
+.card-15 {
+  animation: card_pop 15s ease-in-out;
+}
+
+.card-16 {
+  animation: card_pop 16s ease-in-out;
+}
+
 .card {
   display: flex;
   flex-direction: row;
@@ -119,54 +183,6 @@ img {
 }
 .card:active > .card_anim i, .card:hover > .card_anim i {
   transform: rotate(0);
-}
-.card:nth-child(1) {
-  animation: card_pop 1s ease-in-out;
-}
-.card:nth-child(2) {
-  animation: card_pop 2s ease-in-out;
-}
-.card:nth-child(3) {
-  animation: card_pop 3s ease-in-out;
-}
-.card:nth-child(4) {
-  animation: card_pop 4s ease-in-out;
-}
-.card:nth-child(5) {
-  animation: card_pop 5s ease-in-out;
-}
-.card:nth-child(6) {
-  animation: card_pop 6s ease-in-out;
-}
-.card:nth-child(7) {
-  animation: card_pop 7s ease-in-out;
-}
-.card:nth-child(8) {
-  animation: card_pop 8s ease-in-out;
-}
-.card:nth-child(9) {
-  animation: card_pop 9s ease-in-out;
-}
-.card:nth-child(10) {
-  animation: card_pop 10s ease-in-out;
-}
-.card:nth-child(11) {
-  animation: card_pop 11s ease-in-out;
-}
-.card:nth-child(12) {
-  animation: card_pop 12s ease-in-out;
-}
-.card:nth-child(13) {
-  animation: card_pop 13s ease-in-out;
-}
-.card:nth-child(14) {
-  animation: card_pop 14s ease-in-out;
-}
-.card:nth-child(15) {
-  animation: card_pop 15s ease-in-out;
-}
-.card:nth-child(16) {
-  animation: card_pop 16s ease-in-out;
 }
 
 .card_menu {
