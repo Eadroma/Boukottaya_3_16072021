@@ -32,6 +32,11 @@ img {
   object-fit: cover;
   height: 200px;
 }
+@media (min-width: 64em) {
+  img {
+    height: 364px;
+  }
+}
 
 #main_content {
   position: relative;
@@ -54,10 +59,10 @@ img {
 
 .card_logo {
   display: relative;
+  margin-top: 2.3rem;
 }
 
 .card_logo i {
-  margin-top: 2.3rem;
   margin-right: 1rem;
   font-size: 28px;
 }
@@ -80,6 +85,14 @@ img {
   display: flex;
   justify-content: space-around;
 }
+@media (min-width: 64em) {
+  #title_main {
+    justify-content: center;
+  }
+  #title_main .card_logo {
+    margin-left: 2rem;
+  }
+}
 
 .title_menu h2 {
   text-transform: uppercase;
@@ -96,6 +109,13 @@ img {
 #dessert_content,
 #entree_content {
   margin: 1.5rem 1rem 0rem 1rem;
+}
+@media (min-width: 64em) {
+  #plat_content,
+#dessert_content,
+#entree_content {
+    width: 33%;
+  }
 }
 
 .card-1 {
@@ -235,6 +255,11 @@ img {
   align-self: center;
   text-align: center;
 }
+@media (min-width: 64em) {
+  #ButtonDescription {
+    width: 10%;
+  }
+}
 
 footer {
   background-color: #353535;
@@ -246,14 +271,12 @@ footer a {
   color: white;
   text-decoration: none;
 }
-
 footer h2 {
   font-family: "Shrikhand", cursive;
   font-size: 16px;
   letter-spacing: 1px;
   margin: 2rem 0 1rem 1rem;
 }
-
 footer ul {
   font-family: "Roboto", sans-serif;
   list-style: none;
@@ -262,14 +285,17 @@ footer ul {
   margin-bottom: 2rem;
   font-style: normal;
 }
-
 footer i {
   margin-right: 0.5rem;
   font-size: 16px;
 }
-
 footer li {
   margin-bottom: 0.5rem;
+}
+@media (min-width: 48em) {
+  footer {
+    align-items: center;
+  }
 }
 
 .checkanim {
@@ -295,6 +321,13 @@ footer li {
 .card_anim i {
   transform: rotate(180deg);
   transition-duration: 1s;
+}
+
+@media (min-width: 64em) {
+  #resto_content {
+    display: flex;
+    justify-content: space-evenly;
+  }
 }
 
 @keyframes card_pop {

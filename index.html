@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <title>Ohmyfood!</title>
 </head>
-<body onload="loaderFunction()">
+<body>
     <div id="loader"></div>
     <div id="wait">
         <header>
@@ -119,18 +119,5 @@
             </ul>
         </footer>
     </div>
-
-    <script>
-        var loader;
-
-        function loaderFunction() {
-            setTimeout(showPage, 3000)
-        }
-
-        function showPage() {
-            document.getElementById("loader").style.display = "none";
-            document.getElementById("wait").style.display= "block";
-        }
-    </script>
 </body>
 </html>

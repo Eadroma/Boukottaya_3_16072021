@@ -2,8 +2,30 @@
 $primary_color: #9356DC;
 $secondary_color: #FF79DA;
 $third_color: #99E2D0;
-$font-family: 'Roboto', sans-serif;
-$logo-font: 'Shrikhand', cursive;
+$font-family: 'Roboto',
+sans-serif;
+$logo-font: 'Shrikhand',
+cursive;
+
+
+@mixin breakpoint($point) {
+    @if $point == desktop {
+      @media (min-width: 70em) { @content ; }
+   }
+    @else if $point == laptop {
+      @media (min-width: 64em) { @content ; }
+   }
+     @else if $point == tablet {
+      @media (min-width: 48em) { @content ; }
+   }
+    @else if $point == phablet {
+      @media (min-width: 37.5em)  { @content ; }
+   }
+   @else if $point == mobileonly {
+      @media (max-width: 37.5em)  { @content ; }
+ 
+   }
+ }
 
 * {
     margin: 0;
@@ -14,21 +36,29 @@ header {
     display: flex;
     justify-content: center;
     border-bottom: 1px transparent black;
-    -webkit-box-shadow: inset -16px -31px 15px -30px rgba(0,0,0,0.35); 
-    box-shadow: inset -16px -31px 15px -30px rgba(0,0,0,0.35);
-}
+    -webkit-box-shadow: inset -16px -31px 15px -30px rgba(0, 0, 0, 0.35);
+    box-shadow: inset -16px -31px 15px -30px rgba(0, 0, 0, 0.35);
 
-header img {
-    margin-bottom: 20px;
-    margin-top: 20px;
+    img {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
 }
 
 #wait {
-    display:none;
+    opacity: 0.3;
+    animation: 3s opacityA 3s forwards;
+}
+
+
+@keyframes opacityA {
+    to {
+        opacity: 1;
+    }
 }
 
 #loader {
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     z-index: 1;
@@ -38,35 +68,66 @@ header img {
     border: 16px solid #f3f3f3;
     border-radius: 50%;
     border-top: 16px solid $primary_color;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
-  }
-  
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+    -webkit-animation: spin 2s linear infinite, cssAnimation 0s ease-out 3s forwards;
+    animation: spin 2s linear infinite, cssAnimation 0s ease-out 3s forwards;
+
+}
+
+@keyframes cssAnimation {
+    to {
+        width: 0;
+        height: 0;
+        display: none;
+        border: none;
+        position: absolute;
+    }
+}
+
+@-webkit-keyframes cssAnimation {
+    to {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        position: absolute;
+        border: none;
+    }
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 #subheader {
     display: flex;
     justify-content: center;
     background-color: rgba(234, 234, 234, 255);
     padding: 20px 0px 20px 0px;
-}
 
-#subheader span {
-    font-family: $font-family;
-    font-weight: 400;
-    margin-right: 3rem;
-}
+    span {
+        font-family: $font-family;
+        font-weight: 400;
+        margin-right: 3rem;
 
-#subheader span i {
-    margin-right: 10px;
+        i {
+            margin-right: 10px;
+        }
+    }
 }
 
 #Description {
@@ -77,121 +138,161 @@ header img {
     flex-direction: column;
     align-items: center;
     font-family: $font-family;
-}
 
-#Description h1 {
-    font-size: 24px;
-    width: 70%;
-    font-weight: 800;
-    text-align: center;
-}
+    h1 {
+        font-size: 24px;
+        width: 70%;
+        font-weight: 800;
+        text-align: center;
+    }
 
-#Description p {
-    color: grey;
-    margin-top: 1rem;
-    font-size: 16px;
-    width: 80%;
-    text-align: center;
-    font-weight: 400;
-}
+    p {
+        color: grey;
+        margin-top: 1rem;
+        font-size: 16px;
+        width: 80%;
+        text-align: center;
+        font-weight: 400;
+    }
 
-#ButtonDescription {
-    margin-top: 2rem;
-    display: inline-block;
-    border: 1px transparent $secondary_color;
-    background-color: $primary_color;
-    background-image:
-        linear-gradient(to right, $secondary_color, $primary_color);
-    border-radius: 25px;
-    color: white;
-    padding: 1rem;
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 0 16px #0000002e;
-}
+    #ButtonDescription {
+        margin-top: 2rem;
+        display: inline-block;
+        border: 1px transparent $secondary_color;
+        background-color: $primary_color;
+        background-image:
+            linear-gradient(to right, $secondary_color, $primary_color);
+        border-radius: 25px;
+        color: white;
+        padding: 1rem;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 0 16px #0000002e;
+        
+    }
 
-#Fonctionnement {
-    margin: 2rem 1rem 4rem 1rem;
-}
+    @include breakpoint(laptop) {
+        p {
+            margin-top: 3rem;
+        }
 
-#Fonctionnement h1 {
-    font-family: $font-family;
-}
-
-#Fonctionnement ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    font-family: $font-family;
-    font-size: 16px;
-}
-
-#Fonctionnement i {
-    font-size: 20px;
-}
-
-#Fonctionnement span {
-    border: 1px solid white;
-    border-radius: 40px;
-    background: rgba(246, 246, 246, 255);
-    padding: 1rem 2rem 1rem 2rem;
-    box-shadow: 0 0 16px #0000002e;
-    min-width: 72%;
-    &:hover {
-        background-color: rgba(245,237,255,255);
-        .fas {
-            color: $primary_color;
-            opacity: 1;
+        #ButtonDescription {
+            margin-top: 4rem;
         }
     }
 }
 
-#Fonctionnement li {
-    display: flex;
-    align-items: center;
-    margin-top: 2rem;
-}
-#Fonctionnement i {
-    opacity: 0.5;
-    margin-right: 20px;
-    margin-left: 10px;
+
+#Fonctionnement {
+    margin: 2rem 1rem 4rem 1rem;
+
+    h1 {
+        font-family: $font-family;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        font-family: $font-family;
+        font-size: 16px;
+    }
+
+    i {
+        font-size: 20px;
+    }
+
+    span {
+        border: 1px solid white;
+        border-radius: 40px;
+        background: rgba(246, 246, 246, 255);
+        padding: 1rem 2rem 1rem 2rem;
+        box-shadow: 0 0 16px #0000002e;
+        min-width: 72%;
+
+        &:hover {
+            background-color: rgba(245, 237, 255, 255);
+
+            .fas {
+                color: $primary_color;
+                opacity: 1;
+            }
+        }
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    i {
+        opacity: 0.5;
+        margin-right: 20px;
+        margin-left: 10px;
+    }
+
+    p {
+        position: absolute;
+        left: 42px;
+        border: 1px solid $primary_color;
+        padding: 5px 10px 5px 10px;
+        border-radius: 50%;
+        color: white;
+        background-color: $primary_color;
+    }
+
+    @include breakpoint(tablet) {
+        ul {
+            padding: 0;
+        }
+        p {
+            left: 73px;
+        }
+        li {
+            justify-content: center;
+        }
+    }
+
+    @include breakpoint(laptop) {
+        h1 {
+            text-align: center;
+        }
+        ul {
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        p {
+            position: relative;
+            left: 17px;
+        }
+    }
 }
 
-#Fonctionnement p {
-    position: absolute;
-    left: 42px;
-    border: 1px solid $primary_color;
-    padding: 5px 10px 5px 10px;
-    border-radius: 50%;
-    color: white;
-    background-color: $primary_color;
+#Restaurant_cards {
+    @include breakpoint(laptop) {
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        justify-content: space-around;
+        margin-top: 5rem;
+    }
 }
-
 #Restaurant {
     background-color: rgba(246, 246, 246, 255);
     padding-top: 3rem;
     display: flex;
     flex-direction: column;
-}
 
-#Restaurant h1 {
-    font-family: $font-family;
-    margin: 0 0 1rem 1rem;
-}
+    h1 {
+        font-family: $font-family;
+        margin: 0 0 1rem 1rem;
+    }
 
-#Restaurant_cards img {
-    object-fit: cover;
-    width: 100%;
-    max-height: 227px;
-    border-radius: 25px 25px 0 0;
-}
-
-#Restaurant_cards figure {
-    background-color: white;
-    width: 90%;
-    box-shadow: 0 0 16px #0000002e;
-    border-radius: 25px 25px 25px 25px;
-    margin-left: 5%;
+    @include breakpoint(laptop) {
+        align-items: center
+    }
 }
 
 .card_text {
@@ -200,26 +301,16 @@ header img {
     margin: 5px 10px 5px 10px;
     font: $font-family;
 
-}
+    h2 {
+        font-size: 22px;
+        font-weight: 900;
+        margin-bottom: 5px;
+    }
 
-.card_text h2 {
-    font-size: 22px;
-    font-weight: 900;
-    margin-bottom: 5px;
-}
-
-.card_text p {
-    font-size: 20px;
-    opacity: 0.8;
-}
-
-#Restaurant_cards figcaption {
-    display: inline-flex;
-    align-items: center;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    width: 100%;
-    justify-content: space-between;
+    p {
+        font-size: 20px;
+        opacity: 0.8;
+    }
 }
 
 .card_logo {
@@ -239,6 +330,7 @@ header img {
 .lock .icon-lock {
     display: none;
 }
+
 .lock:hover .icon-lock {
     display: inline;
     color: $primary_color;
@@ -246,15 +338,47 @@ header img {
 
 .Restaurant_card {
     margin-bottom: 2rem;
-}
 
-.Restaurant_card a {
-    text-decoration: none;
-    color: black;
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    figcaption {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    figure {
+        background-color: white;
+        width: 90%;
+        box-shadow: 0 0 16px #0000002e;
+        border-radius: 25px 25px 25px 25px;
+        margin-left: 5%;
+    }
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        max-height: 227px;
+        border-radius: 25px 25px 0 0;
+    }
+
+    @include breakpoint(laptop) {
+        width: 522px;
+
+        figure {
+            width: 100%;
+        }
+    }
 }
 
 footer {
-    background-color: rgba(53,53,53,255);
+    background-color: rgba(53, 53, 53, 255);
     color: white;
     display: flex;
     flex-direction: column;
@@ -263,30 +387,33 @@ footer {
         color: white;
         text-decoration: none;
     }
-}
 
-footer h2 {
-    font-family: $logo-font;
-    font-size: 16px;
-    letter-spacing: 1px;
-    margin: 2rem 0 1rem 1rem;
-}
+    h2 {
+        font-family: $logo-font;
+        font-size: 16px;
+        letter-spacing: 1px;
+        margin: 2rem 0 1rem 1rem;
+    }
 
-footer ul {
-    font-family: $font-family;
-    list-style: none;
-    padding: 0;
-    margin-left: 1rem;
-    margin-bottom: 2rem;
-    font-style: normal;
-}
+    ul {
+        font-family: $font-family;
+        list-style: none;
+        padding: 0;
+        margin-left: 1rem;
+        margin-bottom: 2rem;
+        font-style: normal;
+    }
 
-footer i {
-    margin-right: 0.5rem;
-    font-size: 16px;
-}
+    i {
+        margin-right: 0.5rem;
+        font-size: 16px;
+    }
 
-footer li {
-    margin-bottom: 0.5rem;
-}
+    li {
+        margin-bottom: 0.5rem;
+    }
 
+    @include breakpoint(tablet) {
+        align-items: center;
+    }
+}

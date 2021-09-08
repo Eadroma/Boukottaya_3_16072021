@@ -11,18 +11,23 @@ header {
   -webkit-box-shadow: inset -16px -31px 15px -30px rgba(0, 0, 0, 0.35);
   box-shadow: inset -16px -31px 15px -30px rgba(0, 0, 0, 0.35);
 }
-
 header img {
   margin-bottom: 20px;
   margin-top: 20px;
 }
 
 #wait {
-  display: none;
+  opacity: 0.3;
+  animation: 3s opacityA 3s forwards;
 }
 
+@keyframes opacityA {
+  to {
+    opacity: 1;
+  }
+}
 #loader {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   z-index: 1;
@@ -32,10 +37,28 @@ header img {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
   border-top: 16px solid #9356DC;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+  -webkit-animation: spin 2s linear infinite, cssAnimation 0s ease-out 3s forwards;
+  animation: spin 2s linear infinite, cssAnimation 0s ease-out 3s forwards;
 }
 
+@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    display: none;
+    border: none;
+    position: absolute;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    position: absolute;
+    border: none;
+  }
+}
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -58,13 +81,11 @@ header img {
   background-color: #eaeaea;
   padding: 20px 0px 20px 0px;
 }
-
 #subheader span {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   margin-right: 3rem;
 }
-
 #subheader span i {
   margin-right: 10px;
 }
@@ -78,14 +99,12 @@ header img {
   align-items: center;
   font-family: "Roboto", sans-serif;
 }
-
 #Description h1 {
   font-size: 24px;
   width: 70%;
   font-weight: 800;
   text-align: center;
 }
-
 #Description p {
   color: grey;
   margin-top: 1rem;
@@ -94,8 +113,7 @@ header img {
   text-align: center;
   font-weight: 400;
 }
-
-#ButtonDescription {
+#Description #ButtonDescription {
   margin-top: 2rem;
   display: inline-block;
   border: 1px transparent #FF79DA;
@@ -108,15 +126,21 @@ header img {
   font-weight: 600;
   box-shadow: 0 0 16px #0000002e;
 }
+@media (min-width: 64em) {
+  #Description p {
+    margin-top: 3rem;
+  }
+  #Description #ButtonDescription {
+    margin-top: 4rem;
+  }
+}
 
 #Fonctionnement {
   margin: 2rem 1rem 4rem 1rem;
 }
-
 #Fonctionnement h1 {
   font-family: "Roboto", sans-serif;
 }
-
 #Fonctionnement ul {
   display: flex;
   flex-direction: column;
@@ -124,11 +148,9 @@ header img {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
-
 #Fonctionnement i {
   font-size: 20px;
 }
-
 #Fonctionnement span {
   border: 1px solid white;
   border-radius: 40px;
@@ -144,19 +166,16 @@ header img {
   color: #9356DC;
   opacity: 1;
 }
-
 #Fonctionnement li {
   display: flex;
   align-items: center;
   margin-top: 2rem;
 }
-
 #Fonctionnement i {
   opacity: 0.5;
   margin-right: 20px;
   margin-left: 10px;
 }
-
 #Fonctionnement p {
   position: absolute;
   left: 42px;
@@ -166,6 +185,40 @@ header img {
   color: white;
   background-color: #9356DC;
 }
+@media (min-width: 48em) {
+  #Fonctionnement ul {
+    padding: 0;
+  }
+  #Fonctionnement p {
+    left: 73px;
+  }
+  #Fonctionnement li {
+    justify-content: center;
+  }
+}
+@media (min-width: 64em) {
+  #Fonctionnement h1 {
+    text-align: center;
+  }
+  #Fonctionnement ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  #Fonctionnement p {
+    position: relative;
+    left: 17px;
+  }
+}
+
+@media (min-width: 64em) {
+  #Restaurant_cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: space-around;
+    margin-top: 5rem;
+  }
+}
 
 #Restaurant {
   background-color: #f6f6f6;
@@ -173,25 +226,14 @@ header img {
   display: flex;
   flex-direction: column;
 }
-
 #Restaurant h1 {
   font-family: "Roboto", sans-serif;
   margin: 0 0 1rem 1rem;
 }
-
-#Restaurant_cards img {
-  object-fit: cover;
-  width: 100%;
-  max-height: 227px;
-  border-radius: 25px 25px 0 0;
-}
-
-#Restaurant_cards figure {
-  background-color: white;
-  width: 90%;
-  box-shadow: 0 0 16px #0000002e;
-  border-radius: 25px 25px 25px 25px;
-  margin-left: 5%;
+@media (min-width: 64em) {
+  #Restaurant {
+    align-items: center;
+  }
 }
 
 .card_text {
@@ -200,25 +242,14 @@ header img {
   margin: 5px 10px 5px 10px;
   font: "Roboto", sans-serif;
 }
-
 .card_text h2 {
   font-size: 22px;
   font-weight: 900;
   margin-bottom: 5px;
 }
-
 .card_text p {
   font-size: 20px;
   opacity: 0.8;
-}
-
-#Restaurant_cards figcaption {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  width: 100%;
-  justify-content: space-between;
 }
 
 .card_logo {
@@ -247,10 +278,38 @@ header img {
 .Restaurant_card {
   margin-bottom: 2rem;
 }
-
 .Restaurant_card a {
   text-decoration: none;
   color: black;
+}
+.Restaurant_card figcaption {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  justify-content: space-between;
+}
+.Restaurant_card figure {
+  background-color: white;
+  width: 90%;
+  box-shadow: 0 0 16px #0000002e;
+  border-radius: 25px 25px 25px 25px;
+  margin-left: 5%;
+}
+.Restaurant_card img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 227px;
+  border-radius: 25px 25px 0 0;
+}
+@media (min-width: 64em) {
+  .Restaurant_card {
+    width: 522px;
+  }
+  .Restaurant_card figure {
+    width: 100%;
+  }
 }
 
 footer {
@@ -263,14 +322,12 @@ footer a {
   color: white;
   text-decoration: none;
 }
-
 footer h2 {
   font-family: "Shrikhand", cursive;
   font-size: 16px;
   letter-spacing: 1px;
   margin: 2rem 0 1rem 1rem;
 }
-
 footer ul {
   font-family: "Roboto", sans-serif;
   list-style: none;
@@ -279,14 +336,17 @@ footer ul {
   margin-bottom: 2rem;
   font-style: normal;
 }
-
 footer i {
   margin-right: 0.5rem;
   font-size: 16px;
 }
-
 footer li {
   margin-bottom: 0.5rem;
+}
+@media (min-width: 48em) {
+  footer {
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -6,6 +6,26 @@ sans-serif;
 $logo-font: 'Shrikhand',
 cursive;
 $variable: 0;
+
+@mixin breakpoint($point) {
+    @if $point == desktop {
+      @media (min-width: 70em) { @content ; }
+   }
+    @else if $point == laptop {
+      @media (min-width: 64em) { @content ; }
+   }
+     @else if $point == tablet {
+      @media (min-width: 48em) { @content ; }
+   }
+    @else if $point == phablet {
+      @media (min-width: 37.5em)  { @content ; }
+   }
+   @else if $point == mobileonly {
+      @media (max-width: 37.5em)  { @content ; }
+ 
+   }
+ }
+
 * {
     margin: 0;
 }
@@ -39,6 +59,10 @@ img {
     width: 100%;
     object-fit: cover;
     height: 200px;
+
+    @include breakpoint(laptop) {
+        height: 364px; 
+    }
 }
 
 #main_content {
@@ -62,10 +86,10 @@ img {
 
 .card_logo {
     display: relative;
+    margin-top: 2.3rem;
 }
 
 .card_logo i {
-    margin-top: 2.3rem;
     margin-right: 1rem;
     font-size: 28px;
 }
@@ -86,6 +110,14 @@ img {
 #title_main {
     display: flex;
     justify-content: space-around;
+
+    @include breakpoint(laptop) {
+        justify-content: center;
+
+        .card_logo {
+            margin-left: 2rem;
+        }
+    }
 }
 
 .title_menu h2 {
@@ -103,6 +135,10 @@ img {
 #dessert_content,
 #entree_content {
     margin: 1.5rem 1rem 0rem 1rem;
+
+    @include breakpoint(laptop) {
+        width: 33%;
+    }
 }
 
     @for $i from 1 through 16 {
@@ -195,6 +231,10 @@ img {
     box-shadow: 0 0 16px #0000002e;
     align-self: center;
     text-align: center;
+
+    @include breakpoint(laptop) {
+        width: 10%;
+    }
 }
 
 footer {
@@ -202,37 +242,40 @@ footer {
     color: white;
     display: flex;
     flex-direction: column;
-
     a {
         color: white;
         text-decoration: none;
     }
+    h2 {
+        font-family: $logo-font;
+        font-size: 16px;
+        letter-spacing: 1px;
+        margin: 2rem 0 1rem 1rem;
+    }
+    
+    ul {
+        font-family: $font-family;
+        list-style: none;
+        padding: 0;
+        margin-left: 1rem;
+        margin-bottom: 2rem;
+        font-style: normal;
+    }
+    
+    i {
+        margin-right: 0.5rem;
+        font-size: 16px;
+    }
+    
+    li {
+        margin-bottom: 0.5rem;
+    }
+    
+    @include breakpoint(tablet) {
+        align-items: center;
+    }
 }
 
-footer h2 {
-    font-family: $logo-font;
-    font-size: 16px;
-    letter-spacing: 1px;
-    margin: 2rem 0 1rem 1rem;
-}
-
-footer ul {
-    font-family: $font-family;
-    list-style: none;
-    padding: 0;
-    margin-left: 1rem;
-    margin-bottom: 2rem;
-    font-style: normal;
-}
-
-footer i {
-    margin-right: 0.5rem;
-    font-size: 16px;
-}
-
-footer li {
-    margin-bottom: 0.5rem;
-}
 
 .checkanim {
     background: lightgreen;
@@ -259,6 +302,13 @@ footer li {
     i {
         transform: rotate(180deg);
         transition-duration: 1s;
+    }
+}
+
+#resto_content {
+    @include breakpoint(laptop) {
+        display: flex;
+        justify-content: space-evenly;
     }
 }
 
