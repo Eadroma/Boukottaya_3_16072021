@@ -296,6 +296,15 @@ footer li {
   footer {
     align-items: center;
   }
+  footer ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 20px;
+  }
+  footer h2 {
+    font-size: 30px;
+  }
 }
 
 .checkanim {

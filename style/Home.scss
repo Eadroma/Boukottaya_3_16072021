@@ -9,23 +9,37 @@ cursive;
 
 
 @mixin breakpoint($point) {
-    @if $point == desktop {
-      @media (min-width: 70em) { @content ; }
-   }
-    @else if $point == laptop {
-      @media (min-width: 64em) { @content ; }
-   }
-     @else if $point == tablet {
-      @media (min-width: 48em) { @content ; }
-   }
-    @else if $point == phablet {
-      @media (min-width: 37.5em)  { @content ; }
-   }
-   @else if $point == mobileonly {
-      @media (max-width: 37.5em)  { @content ; }
- 
-   }
- }
+    @if $point==desktop {
+        @media (min-width: 70em) {
+            @content ;
+        }
+    }
+
+    @else if $point==laptop {
+        @media (min-width: 64em) {
+            @content ;
+        }
+    }
+
+    @else if $point==tablet {
+        @media (min-width: 48em) {
+            @content ;
+        }
+    }
+
+    @else if $point==phablet {
+        @media (min-width: 37.5em) {
+            @content ;
+        }
+    }
+
+    @else if $point==mobileonly {
+        @media (max-width: 37.5em) {
+            @content ;
+        }
+
+    }
+}
 
 * {
     margin: 0;
@@ -168,16 +182,20 @@ header {
         text-decoration: none;
         font-weight: 600;
         box-shadow: 0 0 16px #0000002e;
-        
+
     }
 
     @include breakpoint(laptop) {
         p {
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
 
         #ButtonDescription {
-            margin-top: 4rem;
+            margin-top: 2rem;
+        }
+
+        h1 {
+            width: 13%;
         }
     }
 }
@@ -246,9 +264,11 @@ header {
         ul {
             padding: 0;
         }
+
         p {
             left: 73px;
         }
+
         li {
             justify-content: center;
         }
@@ -258,6 +278,7 @@ header {
         h1 {
             text-align: center;
         }
+
         ul {
             flex-direction: row;
             justify-content: space-evenly;
@@ -279,6 +300,7 @@ header {
         margin-top: 5rem;
     }
 }
+
 #Restaurant {
     background-color: rgba(246, 246, 246, 255);
     padding-top: 3rem;
@@ -354,6 +376,10 @@ header {
     }
 
     figure {
+    
+        span {
+            position: absolute;
+        }
         background-color: white;
         width: 90%;
         box-shadow: 0 0 16px #0000002e;
@@ -415,5 +441,16 @@ footer {
 
     @include breakpoint(tablet) {
         align-items: center;
+
+        ul {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
     }
 }
