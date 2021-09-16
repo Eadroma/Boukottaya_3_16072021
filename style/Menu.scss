@@ -8,23 +8,37 @@ cursive;
 $variable: 0;
 
 @mixin breakpoint($point) {
-    @if $point == desktop {
-      @media (min-width: 70em) { @content ; }
-   }
-    @else if $point == laptop {
-      @media (min-width: 64em) { @content ; }
-   }
-     @else if $point == tablet {
-      @media (min-width: 48em) { @content ; }
-   }
-    @else if $point == phablet {
-      @media (min-width: 37.5em)  { @content ; }
-   }
-   @else if $point == mobileonly {
-      @media (max-width: 37.5em)  { @content ; }
- 
-   }
- }
+    @if $point==desktop {
+        @media (min-width: 70em) {
+            @content ;
+        }
+    }
+
+    @else if $point==laptop {
+        @media (min-width: 64em) {
+            @content ;
+        }
+    }
+
+    @else if $point==tablet {
+        @media (min-width: 48em) {
+            @content ;
+        }
+    }
+
+    @else if $point==phablet {
+        @media (min-width: 37.5em) {
+            @content ;
+        }
+    }
+
+    @else if $point==mobileonly {
+        @media (max-width: 37.5em) {
+            @content ;
+        }
+
+    }
+}
 
 * {
     margin: 0;
@@ -61,7 +75,7 @@ img {
     height: 200px;
 
     @include breakpoint(laptop) {
-        height: 364px; 
+        height: 364px;
     }
 }
 
@@ -102,6 +116,7 @@ img {
 .lock .icon-lock {
     display: none;
 }
+
 .lock:hover .icon-lock {
     display: inline;
     color: $primary_color;
@@ -141,11 +156,11 @@ img {
     }
 }
 
-    @for $i from 1 through 16 {
-        .card-#{$i} {
-            animation: card_pop #{$i}s ease-in-out;
-        }
+@for $i from 1 through 16 {
+    .card-#{$i} {
+        animation: card_pop #{$i}s ease-in-out;
     }
+}
 
 
 
@@ -242,17 +257,19 @@ footer {
     color: white;
     display: flex;
     flex-direction: column;
+
     a {
         color: white;
         text-decoration: none;
     }
+
     h2 {
         font-family: $logo-font;
         font-size: 16px;
         letter-spacing: 1px;
         margin: 2rem 0 1rem 1rem;
     }
-    
+
     ul {
         font-family: $font-family;
         list-style: none;
@@ -261,16 +278,16 @@ footer {
         margin-bottom: 2rem;
         font-style: normal;
     }
-    
+
     i {
         margin-right: 0.5rem;
         font-size: 16px;
     }
-    
+
     li {
         margin-bottom: 0.5rem;
     }
-    
+
 
     @include breakpoint(tablet) {
         align-items: center;
@@ -325,13 +342,66 @@ footer {
 }
 
 @keyframes card_pop {
-    0%{
+    0% {
         opacity: 0;
     }
-    1%{
+
+    1% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
+}
+
+.heart-container {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    top: 1.8rem;
+    right: 1rem;
+
+    @include breakpoint(laptop) {
+        top: 1.8rem;
+        left: 1rem;
+    }
+}
+
+.heart-clip {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    clip-path: url(#svgPath);
+
+    &:hover {
+        &::before {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: $primary_color;
+        opacity: 0;
+        transform: scale(0);
+        transition: transform 0.2s linear, opacity 0.2s linear;
+        transform-origin: center 60%;
+    }
+}
+
+.heart-stroke {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: $primary_color;
 }
