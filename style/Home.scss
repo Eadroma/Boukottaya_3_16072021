@@ -298,7 +298,9 @@ header {
         width: 80%;
         justify-content: space-around;
         margin-top: 5rem;
+
     }
+
 }
 
 #Restaurant {
@@ -376,15 +378,21 @@ header {
     }
 
     figure {
-    
-        span {
-            position: absolute;
-        }
+
         background-color: white;
         width: 90%;
         box-shadow: 0 0 16px #0000002e;
         border-radius: 25px 25px 25px 25px;
         margin-left: 5%;
+
+        span {
+            position: relative;
+            background-color: #99e2d0;
+            color: #008766;
+            padding: 5px 10px 5px 10px;
+            left: 14rem;
+            bottom: 13rem;
+        }
     }
 
     img {
@@ -399,6 +407,15 @@ header {
 
         figure {
             width: 100%;
+
+            span {
+                position: relative;
+                background-color: #99e2d0;
+                color: #008766;
+                padding: 5px 10px 5px 10px;
+                left: 26rem;
+                bottom: 13rem;
+            }
         }
     }
 }

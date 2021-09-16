@@ -301,7 +301,12 @@ header img {
   margin-left: 5%;
 }
 .Restaurant_card figure span {
-  position: absolute;
+  position: relative;
+  background-color: #99e2d0;
+  color: #008766;
+  padding: 5px 10px 5px 10px;
+  left: 14rem;
+  bottom: 13rem;
 }
 .Restaurant_card img {
   object-fit: cover;
@@ -315,6 +320,14 @@ header img {
   }
   .Restaurant_card figure {
     width: 100%;
+  }
+  .Restaurant_card figure span {
+    position: relative;
+    background-color: #99e2d0;
+    color: #008766;
+    padding: 5px 10px 5px 10px;
+    left: 26rem;
+    bottom: 13rem;
   }
 }
 
