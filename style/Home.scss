@@ -254,7 +254,7 @@ header {
         position: absolute;
         left: 42px;
         border: 1px solid $primary_color;
-        padding: 5px 10px 5px 10px;
+        padding: 3px 8px 3px 8px;
         border-radius: 50%;
         color: white;
         background-color: $primary_color;
@@ -366,6 +366,8 @@ header {
     a {
         text-decoration: none;
         color: black;
+        position: relative;
+        display: block;
     }
 
     figcaption {
@@ -386,12 +388,12 @@ header {
         margin-left: 5%;
 
         span {
-            position: relative;
             background-color: #99e2d0;
             color: #008766;
             padding: 5px 10px 5px 10px;
-            left: 14rem;
-            bottom: 13rem;
+            position: absolute;
+            top: 20px;
+            right: 15px;
         }
     }
 
@@ -409,12 +411,12 @@ header {
             width: 100%;
 
             span {
-                position: relative;
                 background-color: #99e2d0;
                 color: #008766;
                 padding: 5px 10px 5px 10px;
-                left: 26rem;
-                bottom: 13rem;
+                position: absolute;
+                top: 20px;
+                right: 15px;
             }
         }
     }
@@ -519,6 +521,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    fill: $primary_color;
+    fill: black;
  }
  

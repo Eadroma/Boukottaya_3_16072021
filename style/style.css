@@ -183,7 +183,7 @@ header img {
   position: absolute;
   left: 42px;
   border: 1px solid #9356DC;
-  padding: 5px 10px 5px 10px;
+  padding: 3px 8px 3px 8px;
   border-radius: 50%;
   color: white;
   background-color: #9356DC;
@@ -284,6 +284,8 @@ header img {
 .Restaurant_card a {
   text-decoration: none;
   color: black;
+  position: relative;
+  display: block;
 }
 .Restaurant_card figcaption {
   display: inline-flex;
@@ -301,12 +303,12 @@ header img {
   margin-left: 5%;
 }
 .Restaurant_card figure span {
-  position: relative;
   background-color: #99e2d0;
   color: #008766;
   padding: 5px 10px 5px 10px;
-  left: 14rem;
-  bottom: 13rem;
+  position: absolute;
+  top: 20px;
+  right: 15px;
 }
 .Restaurant_card img {
   object-fit: cover;
@@ -322,12 +324,12 @@ header img {
     width: 100%;
   }
   .Restaurant_card figure span {
-    position: relative;
     background-color: #99e2d0;
     color: #008766;
     padding: 5px 10px 5px 10px;
-    left: 26rem;
-    bottom: 13rem;
+    position: absolute;
+    top: 20px;
+    right: 15px;
   }
 }
 
@@ -421,7 +423,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  fill: #9356DC;
+  fill: black;
 }
 
 /*# sourceMappingURL=style.css.map */
