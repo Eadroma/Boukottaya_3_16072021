@@ -302,7 +302,7 @@ header img {
   border-radius: 25px 25px 25px 25px;
   margin-left: 5%;
 }
-.Restaurant_card figure span {
+.Restaurant_card figure .new {
   background-color: #99e2d0;
   color: #008766;
   padding: 5px 10px 5px 10px;
@@ -323,7 +323,7 @@ header img {
   .Restaurant_card figure {
     width: 100%;
   }
-  .Restaurant_card figure span {
+  .Restaurant_card figure .new {
     background-color: #99e2d0;
     color: #008766;
     padding: 5px 10px 5px 10px;
