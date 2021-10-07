@@ -1,0 +1,52 @@
+@import 'global.scss';
+
+.heart-container {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    top: 1.8rem;
+    right: 1rem;
+
+    @include breakpoint(laptop) {
+        top: 1.8rem;
+        left: 1rem;
+    }
+}
+
+.heart-clip {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    clip-path: url(#svgPath);
+
+    &:hover {
+        &::before {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: $primary_color;
+        opacity: 0;
+        transform: scale(0);
+        transition: transform 0.2s linear, opacity 0.2s linear;
+        transform-origin: center 60%;
+    }
+}
+
+.heart-stroke {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: black;
+}

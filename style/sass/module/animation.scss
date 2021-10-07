@@ -1,0 +1,54 @@
+@keyframes opacityA {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes cssAnimation {
+    to {
+        width: 0;
+        height: 0;
+        display: none;
+        border: none;
+        position: absolute;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@for $i from 1 through 16 {
+    .card-#{$i} {
+        animation: card_pop #{$i}s ease-in-out;
+    }
+}
+
+@keyframes card_pop {
+    0% {
+        opacity: 0;
+    }
+
+    1% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes gradient {
+    0% {
+     background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}

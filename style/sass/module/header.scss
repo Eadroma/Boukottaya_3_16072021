@@ -1,0 +1,39 @@
+@import 'global.scss';
+
+.headerHome {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px transparent black;
+    -webkit-box-shadow: inset -16px -31px 15px -30px rgba(0, 0, 0, 0.35);
+    box-shadow: inset -16px -31px 15px -30px rgba(0, 0, 0, 0.35);
+
+    img {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+}
+
+.headerMenu {
+    width: 100%;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    a {
+        position: absolute;
+        left: 10%;
+        text-decoration: none;
+    }
+    
+    i {
+        color: black;
+        font-size: 20px;
+    }
+    h1 {
+        font-family: $logo-font;
+        letter-spacing: 1px;
+    }
+}

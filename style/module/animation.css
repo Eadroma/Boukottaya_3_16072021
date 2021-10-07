@@ -1,0 +1,107 @@
+@keyframes opacityA {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    display: none;
+    border: none;
+    position: absolute;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.card-1 {
+  animation: card_pop 1s ease-in-out;
+}
+
+.card-2 {
+  animation: card_pop 2s ease-in-out;
+}
+
+.card-3 {
+  animation: card_pop 3s ease-in-out;
+}
+
+.card-4 {
+  animation: card_pop 4s ease-in-out;
+}
+
+.card-5 {
+  animation: card_pop 5s ease-in-out;
+}
+
+.card-6 {
+  animation: card_pop 6s ease-in-out;
+}
+
+.card-7 {
+  animation: card_pop 7s ease-in-out;
+}
+
+.card-8 {
+  animation: card_pop 8s ease-in-out;
+}
+
+.card-9 {
+  animation: card_pop 9s ease-in-out;
+}
+
+.card-10 {
+  animation: card_pop 10s ease-in-out;
+}
+
+.card-11 {
+  animation: card_pop 11s ease-in-out;
+}
+
+.card-12 {
+  animation: card_pop 12s ease-in-out;
+}
+
+.card-13 {
+  animation: card_pop 13s ease-in-out;
+}
+
+.card-14 {
+  animation: card_pop 14s ease-in-out;
+}
+
+.card-15 {
+  animation: card_pop 15s ease-in-out;
+}
+
+.card-16 {
+  animation: card_pop 16s ease-in-out;
+}
+
+@keyframes card_pop {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+/*# sourceMappingURL=animation.css.map */

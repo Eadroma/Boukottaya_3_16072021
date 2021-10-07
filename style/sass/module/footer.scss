@@ -1,0 +1,52 @@
+@import 'global.scss';
+
+footer {
+    background-color: rgba(53, 53, 53, 255);
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    h2 {
+        font-family: $logo-font;
+        font-size: 16px;
+        letter-spacing: 1px;
+        margin: 2rem 0 1rem 1rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-left: 1rem;
+        margin-bottom: 2rem;
+        font-style: normal;
+    }
+
+    i {
+        margin-right: 0.5rem;
+        font-size: 16px;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    @include breakpoint(tablet) {
+        align-items: center;
+
+        ul {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+    }
+}
