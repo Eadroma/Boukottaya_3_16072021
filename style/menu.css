@@ -706,6 +706,11 @@ img {
   box-shadow: 0 0 16px #0000002e;
   align-self: center;
   text-align: center;
+  transition: background 0.5s ease-out;
+}
+#ButtonDescription:hover {
+  background: #FF79DA;
+  box-shadow: 0 0 12px 8px #0000002e;
 }
 @media (min-width: 64em) {
   #ButtonDescription {

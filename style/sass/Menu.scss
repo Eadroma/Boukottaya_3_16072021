@@ -141,7 +141,11 @@ img {
     box-shadow: 0 0 16px #0000002e;
     align-self: center;
     text-align: center;
-
+    transition: background 0.5s ease-out;
+    &:hover {
+        background: $secondary_color;
+        box-shadow: 0 0 12px 8px #0000002e;
+    }
     @include breakpoint(laptop) {
         width: 10%;
     }
