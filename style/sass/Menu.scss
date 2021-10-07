@@ -28,11 +28,11 @@ img {
         margin-top: 2rem;
         letter-spacing: 2px;
         font-size: 24px;
+        font-family: $logo-font;
     }
     #title_main {
         display: flex;
         justify-content: space-around;
-    
         @include breakpoint(laptop) {
             justify-content: center;
     

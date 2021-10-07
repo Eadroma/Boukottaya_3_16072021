@@ -601,6 +601,7 @@ img {
   margin-top: 2rem;
   letter-spacing: 2px;
   font-size: 24px;
+  font-family: "Shrikhand", cursive;
 }
 #main_content #title_main {
   display: flex;
